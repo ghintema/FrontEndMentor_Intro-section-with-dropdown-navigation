@@ -21,31 +21,62 @@
     input{
       display: none;
     }
+    
+    header{
+      display:flex;
+      justify-content: space-between;
+      margin:22px 16px;
+    }
     #hamburger-icon {
-      position:absolute;
-      top:20px;
-      right: 20px;
-      width:40px;
-      height: 40px;
+      
+      width:30px;
+       
       background-image: url(images/icon-menu.svg);
       background-repeat: no-repeat;
+      background-size: cover;
       z-index: 10;  
+      transition: background-image 0.3s;
     }
+    /* hidding and defining menu */
     nav#menu {
       position: absolute;
       width:240px;
       height: 100vh;
-      top:0px;
+      top:-22px;
       left:-240px;
-      opacity: 0;
-      background-color:whitesmoke;
-      z-index: -0;
+      opacity:0;
+      background:whitesmoke;
+      z-index: 0;
       transition:left 0.3s, opacity 0.3s;
     }
+    #overlay{
+      position:absolute;
+      width:135px;
+      height:100vh;
+      top:-22px;
+      left:-375px;
+      background: #151515;
+      mix-blend-mode: normal;
+      opacity: 0; 
+      transition:left 0.3s, opacity 0.3s;
+    }
+    /* reappearance of menu on icon-click */
     input#hamburger-check:checked ~ nav#menu{
       opacity: 1;
       left:135px;
     }
+    input#hamburger-check:checked ~ #overlay{
+      opacity: 0.75;
+      left:0px;
+    }
+    /* exchanging burger-icon for a cross-icon */
+    input#hamburger-check:checked ~ #hamburger-icon {
+      background-image: url(images/icon-close-menu.svg);
+      transition: background-image 0.3s;
+
+    }
+
+
     nav a{
       text-decoration: none;
       font-family: 'Epilogue';
@@ -70,17 +101,19 @@
     }
 
     ul.submenu1, ul.submenu2 { /* hidding submenu*/
-      display: none;
+      display:none;
+     
     } 
     /* reappearence of submenu on click or touch of arrow-icon */
     input#open-features:checked ~ ul.submenu1,
     input#open-company:checked ~ ul.submenu2{
-      display: block;
+      display: block;  
     }
-    input#open-features:checked ~ li > label > img,
-    input#open-company:checked ~ li > label > img {
-      transform: rotate(180deg);
-      transition: transform 1s;
+    /* turn-around of arrows after opening submenu */
+    input#open-features:checked + li > label > img,
+    input#open-company:checked + li > label > img {
+      transform: rotate(540deg);
+      transition:transform 0.2s;
     }
 
     nav#menu img.arrow {
@@ -182,6 +215,9 @@
       width:20%;
     }
 
+
+    @media (min-width:1440px){}
+
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
@@ -189,8 +225,8 @@
 <body> 
   <header>
     <img class="logo" src="images/logo.svg" alt="Logo">
+    <input type="checkbox" id="hamburger-check">
     <label id="hamburger-icon" for="hamburger-check"></label>
-    <input type="checkbox" id="hamburger-check"> 
     <nav id="menu">
       <ul class="mainmenu">
         <input type="checkbox" id="open-features">
@@ -216,6 +252,8 @@
         <button class="register">Register</button>
       </div>
     </nav>
+    <div id="overlay"></div>
+    
   </header>
   <main>
     <div class="hero">  </div>
@@ -248,7 +286,35 @@
 </body>
 </html>
 
-/* Group 6 */
+/* Rectangle */
+
+position: absolute;
+width: 375px;
+height: 780px;
+left: 0px;
+top: 0px;
+
+/* Black */
+background: #151515;
+mix-blend-mode: normal;
+opacity: 0.75;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+* Group 6 */
 
 position: absolute;
 left: 42.4%;
