@@ -10,11 +10,195 @@
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+   body{
+    position: relative;
+    width: 375px;
+    min-height: 200vh;
+    margin: auto;
+   }
+    input#hamburger-check{
+      display: none;
+    }
+    #hamburger-icon {
+      position:absolute;
+      top:20px;
+      right: 20px;
+      width:40px;
+      height: 40px;
+      background-image: url(images/icon-menu.svg);
+      background-repeat: no-repeat;
+      border:1px solid red;
+      z-index: 10;  
+    }
+    nav#menu {
+      position: absolute;
+      width:240px;
+      height: 500px;
+      top:30px;
+      left:000px;
+      background-color:whitesmoke;
+      
+      z-index: 0;
+    }
+    nav#menu > ul {
+      list-style-type:none;
+      font-family: 'Epilogue';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      color: #686868;
+      margin:0px;
+      padding:25px;
+    }
+    nav#menu li {
+      margin:11px 0px;
+    }
+    nav#menu > div.logreg {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    nav#menu > div.logreg a {
+      font-family: 'Epilogue';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      color: #686868;
+      text-decoration: none;
+      margin:10px;
+      display: block;
+      width: 100%;
+      text-align: center;
+      
+    }
+    button.register {
+      font-family: 'Epilogue';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 16px;
+      /* identical to box height, or 114% */
+      text-align: center;
+
+      /* Medium Grey */
+      color: #686868;
+      box-sizing: border-box;
+      width: 195px;
+      height: 42px;
+      border: 1.5px solid #686868;
+      border-radius: 14px;
+    }
+
+    div.hero {
+      width:375px;
+      height:281.25px;
+      background-image: url("images/image-hero-mobile.png");
+      background-size:cover;
+    }
+    div.Make-remote{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      margin:50px 19px 48px; 
+    }
+    div.Make-remote h1 {
+      font-family: 'Epilogue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 42px;
+      text-align: center;
+      letter-spacing: -0.5px;
+      color: #151515;
+      margin:0px auto 14px;
+    }
+    div.Make-remote p.claim {
+      font-family: 'Epilogue';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      text-align: center;
+      color: #686868;
+      margin:0px;
+    }
+
+    button.learnmore{
+      width:136px;
+      height:48px;
+      background: #151515;
+      border-radius: 15px;
+      font-family: 'Epilogue';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 26px;
+      /* identical to box height, or 162% */
+      text-align: center;
+      letter-spacing: -0.222222px;
+      border:none;
+      color: #FAFAFA;
+      margin:30px auto 0px;
+    }
+    footer {
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      margin:0px 16px;
+    }
+    footer img.clients {
+      width:20%;
+    }
+
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
-</head>
+</head> 
 <body>
+  <input type="checkbox" id="hamburger-check">
+  <label id="hamburger-icon" for="hamburger-check">
+    
+
+  </label> 
+  <nav id="menu">
+    <ul>
+      <li>Features <img src="images/icon-arrow-down.svg" ></li>
+      <li>Company <img src="images/icon-arrow-down.svg" ></li>
+      <li>Careers </li>
+      <li>About </li>
+    </ul>
+    <div class="logreg">
+      <a class="login" href="#" >Login</a>
+      <button class="register">Register</button>
+    </div>
+  </nav>
+  <header>
+    <img class="logo" src="images/logo.svg" alt="Logo">
+   
+
+   
+    <!-- <img class="hamburger" src="images/icon-menu.svg" alt="hamburgermenu icon"> -->
+
+  </header>
+  <main>
+    <div class="hero">  </div>
+    <div class="Make-remote">
+      <h1>Make remote work</h1>
+      <p class="claim">Get your team in sync, no matter your location. Streamline processes, 
+        create team rituals, and watch productivity soar.</p>
+      <button class="learnmore" >Learn more</button>
+    </div>
+  </main> 
+  <footer>
+    <img class="clients" src="images/client-databiz.svg" alt="client-logo">
+    <img class="clients" src="images/client-audiophile.svg" alt="client-logo">
+    <img class="clients" src="images/client-meet.svg" alt="client-logo">
+    <img class="clients" src="images/client-maker.svg" alt="client-logo">
+  </footer>
 
   Features
   Company
@@ -24,16 +208,250 @@
   Login
   Register
 
-  Make remote work
-
-  Get your team in sync, no matter your location. Streamline processes, 
-  create team rituals, and watch productivity soar.
-
-  Learn more
-  
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">Harm Intemann</a>.
   </div>
 </body>
 </html>
+
+/* Group 6 */
+
+position: absolute;
+left: 42.4%;
+right: 5.6%;
+top: 37.69%;
+bottom: 56.92%;
+
+
+
+/* Register */
+
+position: absolute;
+height: 16px;
+left: 22.12%;
+right: 21.15%;
+top: calc(50% - 16px/2);
+
+/* Body S */
+font-family: 'Epilogue';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+text-align: center;
+
+/* Medium Grey */
+color: #686868;
+
+
+
+/* Rectangle */
+
+box-sizing: border-box;
+
+position: absolute;
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+/* Medium Grey */
+border: 1.5px solid #686868;
+border-radius: 14px;
+
+
+
+
+
+
+/* Rectangle */
+
+position: absolute;
+width: 375px;
+height: 780px;
+left: 0px;
+top: 0px;
+
+/* Black */
+background: #151515;
+mix-blend-mode: normal;
+opacity: 0.75;
+
+
+/* Group 10 */
+
+position: absolute;
+width: 99px;
+height: 152px;
+left: 159px;
+top: 78px;
+
+
+
+/* Group 11 */
+
+position: absolute;
+width: 96px;
+height: 26px;
+left: 159px;
+top: 78px;
+
+
+
+/* Features */
+
+position: absolute;
+height: 26px;
+left: 0%;
+right: 26.04%;
+top: calc(50% - 26px/2);
+
+font-family: 'Epilogue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 26px;
+/* identical to box height, or 162% */
+
+/* Medium Grey */
+color: #686868;
+
+
+
+/* Path 5 */
+
+position: absolute;
+left: 91.67%;
+right: 0%;
+top: 42.31%;
+bottom: 42.31%;
+
+/* Medium Grey */
+border: 1.5px solid #686868;
+
+
+/* Group 11 Copy */
+
+position: absolute;
+width: 99px;
+height: 26px;
+left: 159px;
+top: 120px;
+
+
+
+/* Company */
+
+position: absolute;
+height: 26px;
+left: 0%;
+right: 24.24%;
+top: calc(50% - 26px/2);
+
+font-family: 'Epilogue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 26px;
+/* identical to box height, or 162% */
+
+/* Medium Grey */
+color: #686868;
+
+
+
+/* Path 5 */
+
+position: absolute;
+left: 91.92%;
+right: 0%;
+top: 42.31%;
+bottom: 42.31%;
+
+/* Medium Grey */
+border: 1.5px solid #686868;
+
+
+/* Group 11 Copy 2 */
+
+position: absolute;
+width: 64px;
+height: 26px;
+left: 159px;
+top: 162px;
+
+
+
+/* Careers */
+
+position: absolute;
+height: 26px;
+left: 0%;
+right: 0%;
+top: calc(50% - 26px/2);
+
+font-family: 'Epilogue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 26px;
+/* identical to box height, or 162% */
+
+/* Medium Grey */
+color: #686868;
+
+
+
+/* Group 11 Copy 3 */
+
+position: absolute;
+width: 48px;
+height: 26px;
+left: 159px;
+top: 204px;
+
+
+
+/* About */
+
+position: absolute;
+height: 26px;
+left: 0%;
+right: 0%;
+top: calc(50% - 26px/2);
+
+font-family: 'Epilogue';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 26px;
+/* identical to box height, or 162% */
+
+/* Medium Grey */
+color: #686868;
+
+
+
+
+
+/* Login */
+
+position: absolute;
+height: 16px;
+left: 63.47%;
+right: 26.4%;
+top: calc(50% - 16px/2 - 120px);
+
+/* Body S */
+font-family: 'Epilogue';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height, or 114% */
+
+/* Medium Grey */
+color: #686868;
+
