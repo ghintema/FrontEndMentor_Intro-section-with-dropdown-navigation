@@ -18,7 +18,7 @@
     min-height: 200vh;
     margin: auto;
    }
-    input#hamburger-check{
+    input{
       display: none;
     }
     #hamburger-icon {
@@ -29,20 +29,36 @@
       height: 40px;
       background-image: url(images/icon-menu.svg);
       background-repeat: no-repeat;
-      border:1px solid red;
       z-index: 10;  
     }
     nav#menu {
       position: absolute;
       width:240px;
-      height: 500px;
-      top:30px;
-      left:000px;
+      height: 100vh;
+      top:0px;
+      left:-240px;
+      opacity: 0;
       background-color:whitesmoke;
-      
-      z-index: 0;
+      z-index: -0;
+      transition:left 0.3s, opacity 0.3s;
     }
-    nav#menu > ul {
+    input#hamburger-check:checked ~ nav#menu{
+      opacity: 1;
+      left:135px;
+    }
+    nav a{
+      text-decoration: none;
+      font-family: 'Epilogue';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 26px;
+      color: #686868;
+    }
+    .mainmenu > li {
+      margin:10px 0px;
+    }
+    ul.mainmenu, ul.submenu1, ul.submenu2  {
       list-style-type:none;
       font-family: 'Epilogue';
       font-style: normal;
@@ -50,11 +66,26 @@
       font-size: 16px;
       line-height: 26px;
       color: #686868;
-      margin:0px;
-      padding:25px;
+      padding:15px 25px;
     }
-    nav#menu li {
-      margin:11px 0px;
+
+    ul.submenu1, ul.submenu2 { /* hidding submenu*/
+      display: none;
+    } 
+    /* reappearence of submenu on click or touch of arrow-icon */
+    input#open-features:checked ~ ul.submenu1,
+    input#open-company:checked ~ ul.submenu2{
+      display: block;
+    }
+    input#open-features:checked ~ li > label > img,
+    input#open-company:checked ~ li > label > img {
+      transform: rotate(180deg);
+      transition: transform 1s;
+    }
+
+    nav#menu img.arrow {
+      margin:0px 10px;
+      width:15px;
     }
     nav#menu > div.logreg {
       display: flex;
@@ -81,10 +112,7 @@
       font-weight: 500;
       font-size: 14px;
       line-height: 16px;
-      /* identical to box height, or 114% */
       text-align: center;
-
-      /* Medium Grey */
       color: #686868;
       box-sizing: border-box;
       width: 195px;
@@ -158,31 +186,36 @@
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head> 
-<body>
-  <input type="checkbox" id="hamburger-check">
-  <label id="hamburger-icon" for="hamburger-check">
-    
-
-  </label> 
-  <nav id="menu">
-    <ul>
-      <li>Features <img src="images/icon-arrow-down.svg" ></li>
-      <li>Company <img src="images/icon-arrow-down.svg" ></li>
-      <li>Careers </li>
-      <li>About </li>
-    </ul>
-    <div class="logreg">
-      <a class="login" href="#" >Login</a>
-      <button class="register">Register</button>
-    </div>
-  </nav>
+<body> 
   <header>
     <img class="logo" src="images/logo.svg" alt="Logo">
-   
-
-   
-    <!-- <img class="hamburger" src="images/icon-menu.svg" alt="hamburgermenu icon"> -->
-
+    <label id="hamburger-icon" for="hamburger-check"></label>
+    <input type="checkbox" id="hamburger-check"> 
+    <nav id="menu">
+      <ul class="mainmenu">
+        <input type="checkbox" id="open-features">
+        <li>Features <label for="open-features"><img class="arrow" src="images/icon-arrow-down.svg" > </label></li>
+        <ul class="submenu1">
+          <li> <a href="#"><img src="images/icon-todo.svg" alt="Icon Calender"> Todo List</a></li>
+          <li> <a href="#"><img src="images/icon-calendar.svg" alt="Icon Calender"> Calender</a></li>
+          <li> <a href="#"><img src="images/icon-reminders.svg" alt="Icon Reminders"> Reminders</a></li>
+          <li> <a href="#"><img src="images/icon-planning.svg" alt="Icon Planing"> Planing</a></li>
+        </ul>
+        <input type="checkbox" id="open-company">
+        <li>Company <label for="open-company"><img class="arrow" src="images/icon-arrow-down.svg" ></label></li>
+        <ul class="submenu2">
+          <li> <a href="#"> History </a>  </li>
+          <li> <a href="#"> Our Team </a>  </li>
+          <li> <a href="#"> Blog </a>  </li> 
+        </ul>  
+        <li> <a href="#">Careers</a> </li>
+        <li> <a href="#">About</a> </li>
+      </ul>
+      <div class="logreg">
+        <a class="login" href="#" >Login</a>
+        <button class="register">Register</button>
+      </div>
+    </nav>
   </header>
   <main>
     <div class="hero">  </div>
