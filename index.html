@@ -18,9 +18,9 @@
     min-height: 200vh;
     margin: auto;
    }
-    input{
-      display: none;
-    }
+    input{display: none}
+    
+    *{font:normal 16px/26px 'Epilogue'; color: #686868;}
     
     header{
       display:flex;
@@ -28,9 +28,7 @@
       margin:22px 16px;
     }
     #hamburger-icon {
-      
       width:30px;
-       
       background-image: url(images/icon-menu.svg);
       background-repeat: no-repeat;
       background-size: cover;
@@ -39,13 +37,13 @@
     }
     /* hidding and defining menu */
     nav#menu {
-      position: absolute;
+      position:absolute;
       width:240px;
       height: 100vh;
       top:-22px;
       left:-240px;
       opacity:0;
-      background:whitesmoke;
+      background:white;
       z-index: 0;
       transition:left 0.3s, opacity 0.3s;
     }
@@ -57,53 +55,38 @@
       left:-375px;
       background: #151515;
       mix-blend-mode: normal;
-      opacity: 0; 
+      opacity: 1; 
       transition:left 0.3s, opacity 0.3s;
     }
     /* reappearance of menu on icon-click */
     input#hamburger-check:checked ~ nav#menu{
       opacity: 1;
-      left:135px;
+      left:135px;  
     }
     input#hamburger-check:checked ~ #overlay{
       opacity: 0.75;
-      left:0px;
+      left:0px;  
     }
     /* exchanging burger-icon for a cross-icon */
     input#hamburger-check:checked ~ #hamburger-icon {
       background-image: url(images/icon-close-menu.svg);
       transition: background-image 0.3s;
-
     }
 
+    nav a{  text-decoration: none;}
+    
+    li {margin:10px 0px;}
+    
+    img.submenuicon{margin-right:15px;}
 
-    nav a{
-      text-decoration: none;
-      font-family: 'Epilogue';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 26px;
-      color: #686868;
-    }
-    .mainmenu > li {
-      margin:10px 0px;
-    }
     ul.mainmenu, ul.submenu1, ul.submenu2  {
       list-style-type:none;
-      font-family: 'Epilogue';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 26px;
-      color: #686868;
       padding:15px 25px;
     }
 
-    ul.submenu1, ul.submenu2 { /* hidding submenu*/
-      display:none;
-     
-    } 
+    ul.submenu1, ul.submenu2 { display:none; }
+    
+
     /* reappearence of submenu on click or touch of arrow-icon */
     input#open-features:checked ~ ul.submenu1,
     input#open-company:checked ~ ul.submenu2{
@@ -126,30 +109,22 @@
       justify-content: center;
     }
     nav#menu > div.logreg a {
-      font-family: 'Epilogue';
-      font-style: normal;
-      font-weight: 500;
       font-size: 14px;
       line-height: 16px;
-      color: #686868;
       text-decoration: none;
       margin:10px;
-      display: block;
       width: 100%;
       text-align: center;
       
     }
     button.register {
-      font-family: 'Epilogue';
-      font-style: normal;
-      font-weight: 500;
       font-size: 14px;
       line-height: 16px;
       text-align: center;
-      color: #686868;
       box-sizing: border-box;
       width: 195px;
       height: 42px;
+      background:white;
       border: 1.5px solid #686868;
       border-radius: 14px;
     }
@@ -167,8 +142,6 @@
       margin:50px 19px 48px; 
     }
     div.Make-remote h1 {
-      font-family: 'Epilogue';
-      font-style: normal;
       font-weight: 700;
       font-size: 36px;
       line-height: 42px;
@@ -178,13 +151,7 @@
       margin:0px auto 14px;
     }
     div.Make-remote p.claim {
-      font-family: 'Epilogue';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 26px;
       text-align: center;
-      color: #686868;
       margin:0px;
     }
 
@@ -193,11 +160,7 @@
       height:48px;
       background: #151515;
       border-radius: 15px;
-      font-family: 'Epilogue';
-      font-style: normal;
       font-weight: 700;
-      font-size: 16px;
-      line-height: 26px;
       /* identical to box height, or 162% */
       text-align: center;
       letter-spacing: -0.222222px;
@@ -216,9 +179,123 @@
     }
 
 
-    @media (min-width:1440px){}
+    @media (min-width:1440px){
+      body{
+        position: relative;
+        width: 1440px;
+        min-height: 200vh;
+        margin: auto;
+      }
+      header{
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin-bottom:67px;
+      }
+      nav#menu{
+        position: unset;
+        display:flex;
+        justify-content: space-between;
+        width:100%;
+        height: auto;
+        opacity: 1;
+        border:1px solid red;
+      }
+      div.logreg{
+        flex-wrap:nowrap;
+      }
+      nav#menu > div.logreg a {
+        width: auto;
+      }
+      ul.mainmenu{
+        position:relative;
+        margin:0px;
+        padding:0px;
+        border:1px solid green;
+      }
+      ul.mainmenu > li {
+        display:inline;
+        margin:0px 19px;
+      }
+      ul.submenu1, ul.submenu2 {
+        position:absolute;
+        left:-50px;
+        top:40px;
+        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
+        padding:15px 0px;
+        border-radius: 10px;
+      }
+      ul.submenu2 {
+        left:145px;
 
-    .attribution { font-size: 11px; text-align: center; }
+      }
+      ul.submenu1 > li, ul.submenu2 > li {
+        margin:12px 24px;
+      }
+
+      ul.mainmenu > li:hover > ul{
+        display: block;
+      }
+      main {
+        display: flex;
+        justify-content:space-between;
+        align-items:center;
+        margin:auto;
+      }
+      div.Make-remote{
+        width:540px;
+        height: 400px;
+        order:-1;
+        justify-content: flex-start;
+        align-content:center;
+        margin:0px 0px 0px 125px;
+      }
+
+      
+
+      div.Make-remote  h1 {
+        font-size: 80px;
+        line-height: 80px;
+        text-align:start;
+        letter-spacing: -1.11111px;
+      }
+
+      div.Make-remote p.claim {
+        width: 445px;
+        font-size: 18px;
+        line-height: 28px;
+        text-align: left;
+        margin:44px 0px 50px 0px;
+
+
+      }
+
+      button.learnmore {
+        margin:0px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 28px;
+        text-align: center;
+        letter-spacing: -0.25px;
+        color: #151515;
+        background-color: white;
+        border:1px solid #151515;
+      }
+
+      div.hero{
+        width:480px;
+        height:640px;
+        background-image: url("images/image-hero-desktop.png");
+        background-size:cover;
+        margin:0px 90px 0px 0px;
+      }
+      footer {
+        width: 477px;
+        height: 36px;
+        margin:-36px 0px 0px 125px;
+      }
+    }
+
+    .attribution { margin-top:30px;font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
   </style>
 </head> 
@@ -231,19 +308,19 @@
       <ul class="mainmenu">
         <input type="checkbox" id="open-features">
         <li>Features <label for="open-features"><img class="arrow" src="images/icon-arrow-down.svg" > </label></li>
-        <ul class="submenu1">
-          <li> <a href="#"><img src="images/icon-todo.svg" alt="Icon Calender"> Todo List</a></li>
-          <li> <a href="#"><img src="images/icon-calendar.svg" alt="Icon Calender"> Calender</a></li>
-          <li> <a href="#"><img src="images/icon-reminders.svg" alt="Icon Reminders"> Reminders</a></li>
-          <li> <a href="#"><img src="images/icon-planning.svg" alt="Icon Planing"> Planing</a></li>
-        </ul>
+        <li><ul class="submenu1">
+            <li> <a href="#"><img class="submenuicon" src="images/icon-todo.svg" alt="Icon Calender"> Todo List</a></li>
+            <li> <a href="#"><img class="submenuicon" src="images/icon-calendar.svg" alt="Icon Calender"> Calender</a></li>
+            <li> <a href="#"><img class="submenuicon" src="images/icon-reminders.svg" alt="Icon Reminders"> Reminders</a></li>
+            <li> <a href="#"><img class="submenuicon" src="images/icon-planning.svg" alt="Icon Planing"> Planing</a></li>
+            </ul></li>
         <input type="checkbox" id="open-company">
         <li>Company <label for="open-company"><img class="arrow" src="images/icon-arrow-down.svg" ></label></li>
         <ul class="submenu2">
-          <li> <a href="#"> History </a>  </li>
-          <li> <a href="#"> Our Team </a>  </li>
-          <li> <a href="#"> Blog </a>  </li> 
-        </ul>  
+            <li> <a href="#"> History </a>  </li>
+            <li> <a href="#"> Our Team </a>  </li>
+            <li> <a href="#"> Blog </a>  </li> 
+            </ul>
         <li> <a href="#">Careers</a> </li>
         <li> <a href="#">About</a> </li>
       </ul>
@@ -271,14 +348,6 @@
     <img class="clients" src="images/client-maker.svg" alt="client-logo">
   </footer>
 
-  Features
-  Company
-  Careers
-  About
-
-  Login
-  Register
-
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Harm Intemann</a>.
@@ -286,271 +355,4 @@
 </body>
 </html>
 
-/* Rectangle */
-
-position: absolute;
-width: 375px;
-height: 780px;
-left: 0px;
-top: 0px;
-
-/* Black */
-background: #151515;
-mix-blend-mode: normal;
-opacity: 0.75;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-* Group 6 */
-
-position: absolute;
-left: 42.4%;
-right: 5.6%;
-top: 37.69%;
-bottom: 56.92%;
-
-
-
-/* Register */
-
-position: absolute;
-height: 16px;
-left: 22.12%;
-right: 21.15%;
-top: calc(50% - 16px/2);
-
-/* Body S */
-font-family: 'Epilogue';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 16px;
-/* identical to box height, or 114% */
-text-align: center;
-
-/* Medium Grey */
-color: #686868;
-
-
-
-/* Rectangle */
-
-box-sizing: border-box;
-
-position: absolute;
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0%;
-
-/* Medium Grey */
-border: 1.5px solid #686868;
-border-radius: 14px;
-
-
-
-
-
-
-/* Rectangle */
-
-position: absolute;
-width: 375px;
-height: 780px;
-left: 0px;
-top: 0px;
-
-/* Black */
-background: #151515;
-mix-blend-mode: normal;
-opacity: 0.75;
-
-
-/* Group 10 */
-
-position: absolute;
-width: 99px;
-height: 152px;
-left: 159px;
-top: 78px;
-
-
-
-/* Group 11 */
-
-position: absolute;
-width: 96px;
-height: 26px;
-left: 159px;
-top: 78px;
-
-
-
-/* Features */
-
-position: absolute;
-height: 26px;
-left: 0%;
-right: 26.04%;
-top: calc(50% - 26px/2);
-
-font-family: 'Epilogue';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 26px;
-/* identical to box height, or 162% */
-
-/* Medium Grey */
-color: #686868;
-
-
-
-/* Path 5 */
-
-position: absolute;
-left: 91.67%;
-right: 0%;
-top: 42.31%;
-bottom: 42.31%;
-
-/* Medium Grey */
-border: 1.5px solid #686868;
-
-
-/* Group 11 Copy */
-
-position: absolute;
-width: 99px;
-height: 26px;
-left: 159px;
-top: 120px;
-
-
-
-/* Company */
-
-position: absolute;
-height: 26px;
-left: 0%;
-right: 24.24%;
-top: calc(50% - 26px/2);
-
-font-family: 'Epilogue';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 26px;
-/* identical to box height, or 162% */
-
-/* Medium Grey */
-color: #686868;
-
-
-
-/* Path 5 */
-
-position: absolute;
-left: 91.92%;
-right: 0%;
-top: 42.31%;
-bottom: 42.31%;
-
-/* Medium Grey */
-border: 1.5px solid #686868;
-
-
-/* Group 11 Copy 2 */
-
-position: absolute;
-width: 64px;
-height: 26px;
-left: 159px;
-top: 162px;
-
-
-
-/* Careers */
-
-position: absolute;
-height: 26px;
-left: 0%;
-right: 0%;
-top: calc(50% - 26px/2);
-
-font-family: 'Epilogue';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 26px;
-/* identical to box height, or 162% */
-
-/* Medium Grey */
-color: #686868;
-
-
-
-/* Group 11 Copy 3 */
-
-position: absolute;
-width: 48px;
-height: 26px;
-left: 159px;
-top: 204px;
-
-
-
-/* About */
-
-position: absolute;
-height: 26px;
-left: 0%;
-right: 0%;
-top: calc(50% - 26px/2);
-
-font-family: 'Epilogue';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 26px;
-/* identical to box height, or 162% */
-
-/* Medium Grey */
-color: #686868;
-
-
-
-
-
-/* Login */
-
-position: absolute;
-height: 16px;
-left: 63.47%;
-right: 26.4%;
-top: calc(50% - 16px/2 - 120px);
-
-/* Body S */
-font-family: 'Epilogue';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 16px;
-/* identical to box height, or 114% */
-
-/* Medium Grey */
-color: #686868;
 
