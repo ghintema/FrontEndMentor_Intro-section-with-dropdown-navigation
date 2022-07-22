@@ -12,7 +12,12 @@
   <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
-   body{
+   
+    *{
+      margin:0px;
+      padding:0px;
+    }
+    body{
     position: relative;
     width: 375px;
     min-height: 200vh;
@@ -55,7 +60,7 @@
       left:-375px;
       background: #151515;
       mix-blend-mode: normal;
-      opacity: 1; 
+      opacity: 0; 
       transition:left 0.3s, opacity 0.3s;
     }
     /* reappearance of menu on icon-click */
@@ -88,8 +93,8 @@
     
 
     /* reappearence of submenu on click or touch of arrow-icon */
-    input#open-features:checked ~ ul.submenu1,
-    input#open-company:checked ~ ul.submenu2{
+    input#open-features:checked ~ li > ul.submenu1,
+    input#open-company:checked ~ li > ul.submenu2{
       display: block;  
     }
     /* turn-around of arrows after opening submenu */
@@ -100,7 +105,7 @@
     }
 
     nav#menu img.arrow {
-      margin:0px 10px;
+      margin-left:10px;
       width:15px;
     }
     nav#menu > div.logreg {
@@ -108,19 +113,19 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    nav#menu > div.logreg a {
+    
+    nav#menu > div.logreg > a{
       font-size: 14px;
       line-height: 16px;
       text-decoration: none;
-      margin:10px;
-      width: 100%;
-      text-align: center;
-      
-    }
+      width:100%;
+      text-align:center;
+      margin:10px auto;
+    } 
     button.register {
+      text-align: center;
       font-size: 14px;
       line-height: 16px;
-      text-align: center;
       box-sizing: border-box;
       width: 195px;
       height: 42px;
@@ -187,9 +192,15 @@
         margin: auto;
       }
       header{
-        align-items: flex-start;
-        justify-content: flex-start;
-        margin-bottom:67px;
+        align-items: center;
+        justify-content: flex-end;
+        margin:30px 40px 67px;
+        border:1px solid red;
+      }
+      a {
+      font-size: 14px;
+      line-height: 16px;
+      text-decoration: none;
       }
       nav#menu{
         position: unset;
@@ -198,48 +209,67 @@
         width:100%;
         height: auto;
         opacity: 1;
-        border:1px solid red;
       }
       div.logreg{
         flex-wrap:nowrap;
       }
       nav#menu > div.logreg a {
         width: auto;
+        margin:auto 42px; 
       }
       ul.mainmenu{
         position:relative;
-        margin:0px;
+        margin:auto 0px;
         padding:0px;
-        border:1px solid green;
       }
-      ul.mainmenu > li {
+      ul.mainmenu > li{
         display:inline;
-        margin:0px 19px;
+        margin:auto 16px;
+        font-size:14px;
+        border-bottom:25px solid white /* enxtending the hover-area */
       }
+      
       ul.submenu1, ul.submenu2 {
         position:absolute;
-        left:-50px;
+        left:-45px;
         top:40px;
         box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
         padding:15px 0px;
         border-radius: 10px;
       }
       ul.submenu2 {
-        left:145px;
+        left:135px;
 
       }
       ul.submenu1 > li, ul.submenu2 > li {
         margin:12px 24px;
+
       }
 
-      ul.mainmenu > li:hover > ul{
+      ul.mainmenu li:hover, a:hover{
+        color:black;
+      }
+
+      ul.mainmenu li:hover img.arrow{
+      transform: rotate(540deg);
+      transition:transform 0.2s;
+      }
+      ul.mainmenu li:hover > ul{
         display: block;
+      }
+      button.register {
+        width:104px;
+      }
+      button.register:hover {
+        color:black;
+        border-color: black;
       }
       main {
         display: flex;
         justify-content:space-between;
         align-items:center;
-        margin:auto;
+        margin:0px 40px;
+        border:1px solid red;
       }
       div.Make-remote{
         width:540px;
@@ -271,11 +301,18 @@
 
       button.learnmore {
         margin:0px;
+        width:163px;
+        height: 53px;
         font-weight: 700;
         font-size: 18px;
         line-height: 28px;
         text-align: center;
         letter-spacing: -0.25px;
+        color: white;
+        background-color: #151515;
+        border:1px solid white;
+      }
+      button.learnmore:hover {
         color: #151515;
         background-color: white;
         border:1px solid #151515;
@@ -291,8 +328,11 @@
       footer {
         width: 477px;
         height: 36px;
-        margin:-36px 0px 0px 125px;
+        margin:-36px 0px 0px 165px;
       }
+      footer img.clients {
+      width:20%;
+    }
     }
 
     .attribution { margin-top:30px;font-size: 11px; text-align: center; }
@@ -307,20 +347,22 @@
     <nav id="menu">
       <ul class="mainmenu">
         <input type="checkbox" id="open-features">
-        <li>Features <label for="open-features"><img class="arrow" src="images/icon-arrow-down.svg" > </label></li>
-        <li><ul class="submenu1">
+        <li>Features <label for="open-features"><img class="arrow" src="images/icon-arrow-down.svg" > </label>
+          <ul class="submenu1">
             <li> <a href="#"><img class="submenuicon" src="images/icon-todo.svg" alt="Icon Calender"> Todo List</a></li>
             <li> <a href="#"><img class="submenuicon" src="images/icon-calendar.svg" alt="Icon Calender"> Calender</a></li>
             <li> <a href="#"><img class="submenuicon" src="images/icon-reminders.svg" alt="Icon Reminders"> Reminders</a></li>
             <li> <a href="#"><img class="submenuicon" src="images/icon-planning.svg" alt="Icon Planing"> Planing</a></li>
-            </ul></li>
+          </ul>
+        </li>
         <input type="checkbox" id="open-company">
-        <li>Company <label for="open-company"><img class="arrow" src="images/icon-arrow-down.svg" ></label></li>
-        <ul class="submenu2">
+        <li>Company <label for="open-company"><img class="arrow" src="images/icon-arrow-down.svg" ></label>
+          <ul class="submenu2">
             <li> <a href="#"> History </a>  </li>
             <li> <a href="#"> Our Team </a>  </li>
             <li> <a href="#"> Blog </a>  </li> 
-            </ul>
+          </ul>
+        </li>
         <li> <a href="#">Careers</a> </li>
         <li> <a href="#">About</a> </li>
       </ul>
