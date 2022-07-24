@@ -91,19 +91,19 @@
 
     ul.submenu1, ul.submenu2 { display:none; }
     
-
-    /* reappearence of submenu on click or touch of arrow-icon */
-    input#open-features:checked ~ li > ul.submenu1,
-    input#open-company:checked ~ li > ul.submenu2{
-      display: block;  
+    @media (max-width:1440px){
+      /* reappearence of submenu on click or touch of arrow-icon */
+      input#open-features:checked ~ li > ul.submenu1,
+      input#open-company:checked ~ li > ul.submenu2{
+        display: block;  
+      }
+      /* turn-around of arrows after opening submenu */
+      input#open-features:checked + li > label > img,
+      input#open-company:checked + li > label > img {
+        transform: rotate(540deg);
+        transition:transform 0.2s;
+      }
     }
-    /* turn-around of arrows after opening submenu */
-    input#open-features:checked + li > label > img,
-    input#open-company:checked + li > label > img {
-      transform: rotate(540deg);
-      transition:transform 0.2s;
-    }
-
     nav#menu img.arrow {
       margin-left:10px;
       width:15px;
@@ -166,7 +166,6 @@
       background: #151515;
       border-radius: 15px;
       font-weight: 700;
-      /* identical to box height, or 162% */
       text-align: center;
       letter-spacing: -0.222222px;
       border:none;
