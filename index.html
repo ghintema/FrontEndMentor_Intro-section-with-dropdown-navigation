@@ -17,11 +17,13 @@
       margin:0px;
       padding:0px;
     }
+    html {font-size: 100%;}
     body{
     position: relative;
-    width: 375px;
+    max-width: 675px;
     min-height: 200vh;
     margin: auto;
+    
    }
     input{display: none}
     
@@ -30,7 +32,7 @@
     header{
       display:flex;
       justify-content: space-between;
-      margin:22px 16px;
+      margin:22px 4.222267%; /* 16px/375px */
     }
     #hamburger-icon {
       width:30px;
@@ -43,7 +45,7 @@
     /* hidding and defining menu */
     nav#menu {
       position:absolute;
-      width:240px;
+      width:64%; /* 240px/375px */
       height: 100vh;
       top:-22px;
       left:-240px;
@@ -54,10 +56,10 @@
     }
     #overlay{
       position:absolute;
-      width:135px;
+      width:36%; /* 135px/375px */ 
       height:100vh;
       top:-22px;
-      left:-375px;
+      left:-100%;
       background: #151515;
       mix-blend-mode: normal;
       opacity: 0; 
@@ -66,7 +68,7 @@
     /* reappearance of menu on icon-click */
     input#hamburger-check:checked ~ nav#menu{
       opacity: 1;
-      left:135px;  
+      left:36%; /* 135px/375px */  
     }
     input#hamburger-check:checked ~ #overlay{
       opacity: 0.75;
@@ -86,12 +88,13 @@
 
     ul.mainmenu, ul.submenu1, ul.submenu2  {
       list-style-type:none;
-      padding:15px 25px;
+      padding:15px 6.666667%;   /* 25px/375px */
     }
 
     ul.submenu1, ul.submenu2 { display:none; }
     
-    @media (max-width:1440px){
+
+    @media (max-width:1440px){ /* ONLY FOR MOBILE VERSION
       /* reappearence of submenu on click or touch of arrow-icon */
       input#open-features:checked ~ li > ul.submenu1,
       input#open-company:checked ~ li > ul.submenu2{
@@ -105,7 +108,7 @@
       }
     }
     nav#menu img.arrow {
-      margin-left:10px;
+      margin-left:10px; /* 10px/375px */
       width:15px;
     }
     nav#menu > div.logreg {
@@ -115,8 +118,8 @@
     }
     
     nav#menu > div.logreg > a{
-      font-size: 14px;
-      line-height: 16px;
+      font-size: 0.875rem;  /* 14/16 */
+      line-height: 1rem;
       text-decoration: none;
       width:100%;
       text-align:center;
@@ -124,21 +127,24 @@
     } 
     button.register {
       text-align: center;
-      font-size: 14px;
-      line-height: 16px;
+      font-size: 0.875rem;
+      line-height: 2rem;
       box-sizing: border-box;
-      width: 195px;
+      width: 52%;  /* 195px/375Px */
       height: 42px;
       background:white;
       border: 1.5px solid #686868;
-      border-radius: 14px;
+      border-radius: 0.875rem;
     }
 
     div.hero {
-      width:375px;
-      height:281.25px;
-      background-image: url("images/image-hero-mobile.png");
-      background-size:cover;
+      display:flex;
+      margin:auto;
+    }
+    img.hero {
+      width:100%;
+      max-width: 550px;
+      margin:auto;
     }
     div.Make-remote{
       display:flex;
@@ -148,8 +154,8 @@
     }
     div.Make-remote h1 {
       font-weight: 700;
-      font-size: 36px;
-      line-height: 42px;
+      font-size: 2.25rem;
+      line-height: 2.75rempx;
       text-align: center;
       letter-spacing: -0.5px;
       color: #151515;
@@ -161,7 +167,8 @@
     }
 
     button.learnmore{
-      width:136px;
+      width:36.2666667%;  /* 136px/375px */
+      min-width:136px;
       height:48px;
       background: #151515;
       border-radius: 15px;
@@ -172,11 +179,16 @@
       color: #FAFAFA;
       margin:30px auto 0px;
     }
+    button.learnmore:hover {
+        color: #151515;
+        background-color: white;
+        border:1px solid #151515;
+      }
     footer {
       display:flex;
       align-items:center;
       justify-content: space-between;
-      margin:0px 16px;
+      margin:0px 4.266667%; /* 16px/375px */
     }
     footer img.clients {
       width:20%;
@@ -186,9 +198,11 @@
     @media (min-width:1440px){
       body{
         position: relative;
-        width: 1440px;
+        width:1440px;
+        max-width: 1640px;
         min-height: 200vh;
         margin: auto;
+        border:1px solid red;
       }
       header{
         align-items: center;
@@ -197,8 +211,8 @@
         
       }
       a {
-      font-size: 14px;
-      line-height: 16px;
+      font-size: 0.875rem;
+      line-height: 2rem;
       text-decoration: none;
       }
       nav#menu{
@@ -220,6 +234,7 @@
         position:relative;
         margin:auto 0px;
         padding:0px;
+        width:50%;
       }
       ul.mainmenu > li{
         display:inline;
@@ -237,7 +252,7 @@
         border-radius: 10px;
       }
       ul.submenu2 {
-        left:140px;
+        left:140px; 
 
       }
       ul.submenu1 > li, ul.submenu2 > li {
@@ -279,8 +294,6 @@
         margin:0px 0px 0px 125px;
       }
 
-      
-
       div.Make-remote  h1 {
         font-size: 80px;
         line-height: 80px;
@@ -292,12 +305,10 @@
 
       div.Make-remote p.claim {
         width: 445px;
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 28px;
         text-align: left;
         margin:44px 0px 50px 0px;
-
-
       }
 
       button.learnmore {
@@ -305,7 +316,7 @@
         width:163px;
         height: 53px;
         font-weight: 700;
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 28px;
         text-align: center;
         letter-spacing: -0.25px;
@@ -313,18 +324,12 @@
         background-color: #151515;
         border:1px solid white;
       }
-      button.learnmore:hover {
-        color: #151515;
-        background-color: white;
-        border:1px solid #151515;
-      }
-
-      div.hero{
-        width:480px;
-        height:640px;
-        background-image: url("images/image-hero-desktop.png");
-        background-size:cover;
-        margin:0px 90px 0px 0px;
+  
+      img.hero {
+        content:url("images/image-hero-desktop.png");
+        width: 100%;
+        /* max-width:480px;480px / 1440px */
+        height:auto;
       }
       footer {
         width: 477px;
@@ -376,7 +381,8 @@
     
   </header>
   <main>
-    <div class="hero">  </div>
+    <div class="hero">  <img src="images/image-hero-mobile.png" alt="" class="hero"> </div>
+   
     <div class="Make-remote">
       <h1>Make remote work</h1>
       <p class="claim">Get your team in sync, no matter your location. Streamline processes, 
