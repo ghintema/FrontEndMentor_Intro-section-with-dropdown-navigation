@@ -5,352 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
+  <link rel="stylesheet" href="stylesheet.css">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
-   
-    *{
-      margin:0px;
-      padding:0px;
-    }
-    html {font-size: 100%;}
-    body{
-    position: relative;
-    max-width: 675px;
-    min-height: 200vh;
-    margin: auto;
-    
-   }
-    input{display: none}
-    
-    *{font:normal 16px/26px 'Epilogue'; color: #686868;}
-    
-    header{
-      display:flex;
-      justify-content: space-between;
-      margin:22px 4.222267%; /* 16px/375px */
-    }
-    #hamburger-icon {
-      width:30px;
-      background-image: url(images/icon-menu.svg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: 10;  
-      transition: background-image 0.3s;
-    }
-    /* hidding and defining menu */
-    nav#menu {
-      position:absolute;
-      width:64%; /* 240px/375px */
-      height: 100vh;
-      top:-22px;
-      left:-240px;
-      opacity:0;
-      background:white;
-      z-index: 0;
-      transition:left 0.3s, opacity 0.3s;
-    }
-    #overlay{
-      position:absolute;
-      width:36%; /* 135px/375px */ 
-      height:100vh;
-      top:-22px;
-      left:-100%;
-      background: #151515;
-      mix-blend-mode: normal;
-      opacity: 0; 
-      transition:left 0.3s, opacity 0.3s;
-    }
-    /* reappearance of menu on icon-click */
-    input#hamburger-check:checked ~ nav#menu{
-      opacity: 1;
-      left:36%; /* 135px/375px */  
-    }
-    input#hamburger-check:checked ~ #overlay{
-      opacity: 0.75;
-      left:0px;  
-    }
-    /* exchanging burger-icon for a cross-icon */
-    input#hamburger-check:checked ~ #hamburger-icon {
-      background-image: url(images/icon-close-menu.svg);
-      transition: background-image 0.3s;
-    }
-
-    nav a{  text-decoration: none;}
-    
-    li {margin:10px 0px;}
-    
-    img.submenuicon{margin-right:15px;}
-
-    ul.mainmenu, ul.submenu1, ul.submenu2  {
-      list-style-type:none;
-      padding:15px 6.666667%;   /* 25px/375px */
-    }
-
-    ul.submenu1, ul.submenu2 { display:none; }
-    
-
-    @media (max-width:1440px){ /* ONLY FOR MOBILE VERSION
-      /* reappearence of submenu on click or touch of arrow-icon */
-      input#open-features:checked ~ li > ul.submenu1,
-      input#open-company:checked ~ li > ul.submenu2{
-        display: block;  
-      }
-      /* turn-around of arrows after opening submenu */
-      input#open-features:checked + li > label > img,
-      input#open-company:checked + li > label > img {
-        transform: rotate(540deg);
-        transition:transform 0.2s;
-      }
-    }
-    nav#menu img.arrow {
-      margin-left:10px; /* 10px/375px */
-      width:15px;
-    }
-    nav#menu > div.logreg {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    
-    nav#menu > div.logreg > a{
-      font-size: 0.875rem;  /* 14/16 */
-      line-height: 1rem;
-      text-decoration: none;
-      width:100%;
-      text-align:center;
-      margin:10px auto;
-    } 
-    button.register {
-      text-align: center;
-      font-size: 0.875rem;
-      line-height: 2rem;
-      box-sizing: border-box;
-      width: 52%;  /* 195px/375Px */
-      height: 42px;
-      background:white;
-      border: 1.5px solid #686868;
-      border-radius: 0.875rem;
-    }
-
-    div.hero {
-      display:flex;
-      margin:auto;
-    }
-    img.hero {
-      width:100%;
-      max-width: 550px;
-      margin:auto;
-    }
-    div.Make-remote{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin:50px 19px 48px; 
-    }
-    div.Make-remote h1 {
-      font-weight: 700;
-      font-size: 2.25rem;
-      line-height: 2.75rempx;
-      text-align: center;
-      letter-spacing: -0.5px;
-      color: #151515;
-      margin:0px auto 14px;
-    }
-    div.Make-remote p.claim {
-      text-align: center;
-      margin:0px;
-    }
-
-    button.learnmore{
-      width:36.2666667%;  /* 136px/375px */
-      min-width:136px;
-      height:48px;
-      background: #151515;
-      border-radius: 15px;
-      font-weight: 700;
-      text-align: center;
-      letter-spacing: -0.222222px;
-      border:none;
-      color: #FAFAFA;
-      margin:30px auto 0px;
-    }
-    button.learnmore:hover {
-        color: #151515;
-        background-color: white;
-        border:1px solid #151515;
-      }
-    footer {
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      margin:0px 4.266667%; /* 16px/375px */
-    }
-    footer img.clients {
-      width:20%;
-    }
-
-
-    @media (min-width:1440px){
-      body{
-        position: relative;
-        width:1440px;
-        max-width: 1640px;
-        min-height: 200vh;
-        margin: auto;
-        border:1px solid red;
-      }
-      header{
-        align-items: center;
-        justify-content: flex-end;
-        margin:30px 40px 67px;
-        
-      }
-      a {
-      font-size: 0.875rem;
-      line-height: 2rem;
-      text-decoration: none;
-      }
-      nav#menu{
-        position: unset;
-        display:flex;
-        justify-content: space-between;
-        width:100%;
-        height: auto;
-        opacity: 1;
-      }
-      div.logreg{
-        flex-wrap:nowrap;
-      }
-      nav#menu > div.logreg a {
-        width: auto;
-        margin:auto 42px; 
-      }
-      ul.mainmenu{
-        position:relative;
-        margin:auto 0px;
-        padding:0px;
-        width:50%;
-      }
-      ul.mainmenu > li{
-        display:inline;
-        margin:auto 16px;
-        font-size:14px;
-        border-bottom:25px solid white /* enxtending the hover-area */
-      }
-      
-      ul.submenu1, ul.submenu2 {
-        position:absolute;
-        left:-45px;
-        top:40px;
-        box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.149126);
-        padding:12px 0px;
-        border-radius: 10px;
-      }
-      ul.submenu2 {
-        left:140px; 
-
-      }
-      ul.submenu1 > li, ul.submenu2 > li {
-        margin:12px 25px;
-
-      }
-
-      ul.mainmenu li:hover, a:hover{
-        color:black;
-      }
-
-      ul.mainmenu li:hover img.arrow{
-      transform: rotate(540deg);
-      transition:transform 0.2s;
-      }
-      ul.mainmenu li:hover > ul{
-        display: block;
-      }
-      button.register {
-        width:104px;
-      }
-      button.register:hover {
-        color:black;
-        border-color: black;
-      }
-      main {
-        display: flex;
-        justify-content:space-between;
-        align-items:center;
-        margin:0px 40px;
-      
-      }
-      div.Make-remote{
-        width:540px;
-        height: 400px;
-        order:-1;
-        justify-content: flex-start;
-        align-content:center;
-        margin:0px 0px 0px 125px;
-      }
-
-      div.Make-remote  h1 {
-        font-size: 80px;
-        line-height: 80px;
-        font-style: normal;
-        font-weight: 700;
-        text-align:start;
-        letter-spacing: -1.11111px;
-      }
-
-      div.Make-remote p.claim {
-        width: 445px;
-        font-size: 1.125rem;
-        line-height: 28px;
-        text-align: left;
-        margin:44px 0px 50px 0px;
-      }
-
-      button.learnmore {
-        margin:0px;
-        width:163px;
-        height: 53px;
-        font-weight: 700;
-        font-size: 1.125rem;
-        line-height: 28px;
-        text-align: center;
-        letter-spacing: -0.25px;
-        color: white;
-        background-color: #151515;
-        border:1px solid white;
-      }
-  
-      img.hero {
-        content:url("images/image-hero-desktop.png");
-        width: 100%;
-        /* max-width:480px;480px / 1440px */
-        height:auto;
-      }
-      footer {
-        width: 477px;
-        height: 36px;
-        margin:-36px 0px 0px 165px;
-      }
-      footer img.clients {
-      width:20%;
-    }
-    }
-
-    .attribution { margin-top:30px;font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+ 
 </head> 
 <body> 
   <header>
     <img class="logo" src="images/logo.svg" alt="Logo">
     <input type="checkbox" id="hamburger-check">
-    <label id="hamburger-icon" for="hamburger-check"></label>
-    <nav id="menu">
+    <label id="hamburger-icon" for="hamburger-check" aria-label="open menu" ></label>
+    <nav id="menu" aria-hidden="true">
       <ul class="mainmenu">
         <input type="checkbox" id="open-features">
         <li>Features <label for="open-features"><img class="arrow" src="images/icon-arrow-down.svg" > </label>
@@ -401,5 +68,29 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Harm Intemann</a>.
   </div>
+
+  <script>
+    const nav = document.getElementById('menu');
+    const checkbox = document.getElementById('hamburger-check');
+    checkbox.addEventListener('click', (e) => {
+      if (e.target.checked) {
+        nav.setAttribute('aria-hidden', 'false');
+      }
+      if (!e.target.checked) {
+        nav.setAttribute('aria-hidden', 'true');
+      }
+    } )
+
+    function myFunction(x) {
+      if (x.matches) { // If media query matches
+        nav.setAttribute('aria-hidden', 'false');
+      } 
+    }
+
+    var x = window.matchMedia("(min-width: 1440px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+
+  </script>
 </body>
 </html>
