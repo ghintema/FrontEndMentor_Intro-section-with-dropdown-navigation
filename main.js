@@ -72,3 +72,12 @@ openCompany.addEventListener('click', (e) => {
     }
 })
 
+// for desktop layout the nav is always visible.
+var x = window.matchMedia("(min-width: 1440px)")
+    x.addListener(() => {
+        if (x.matches) { // If media query matches
+            nav.setAttribute('aria-hidden', 'false');
+        } else {
+            nav.setAttribute('aria-hidden', 'true');
+        }
+    }) 
