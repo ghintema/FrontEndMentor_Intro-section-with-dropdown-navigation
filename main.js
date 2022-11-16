@@ -7,9 +7,8 @@ const openCompany = document.getElementById('open-company');
 const submenuFeatures = document.getElementById('submenu-features');
 const submenuCompany = document.getElementById('submenu-company');
 
-
+// controlling slide-menu on mobile
 hamburgerIcon.addEventListener('click', () => {
-    console.log('test')
     nav.classList.toggle('showNav');
     overlay.classList.toggle('showOverlay');
     hamburgerIcon.classList.toggle('crossIcon')
@@ -23,10 +22,9 @@ hamburgerIcon.addEventListener('click', () => {
     }
 })
 
-console.log(openCompany)
 
+// controlling sub-menu1 on desktop
 openFeatures.addEventListener('click', (e) => {
-    console.log('test')
     submenuFeatures.classList.toggle('showSubmenu');
     submenuCompany.classList.remove('showSubmenu');
 
@@ -50,6 +48,7 @@ openFeatures.addEventListener('click', (e) => {
     }
 })
 
+// controlling sub-menu2 on desktop
 openCompany.addEventListener('click', (e) => {
     submenuCompany.classList.toggle('showSubmenu');
     submenuFeatures.classList.remove('showSubmenu');

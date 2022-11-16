@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&dsizingisplay=swap');
    
     *{
       margin:0px;
       padding:0px;
+      box-sizing: border-box;
+      list-style:none;
     }
     html {font-size: 100%;}
     body{
@@ -10,10 +12,7 @@
     max-width: 675px;
     min-height: 200vh;
     margin: auto;
-   }
-
-   input { display: none;}
- 
+   } 
     
     *{font:normal 16px/26px 'Epilogue'; color: #686868;}
     
@@ -103,19 +102,6 @@
       border: none;
     }
 
-    @media (max-width:1440px){ /* ONLY FOR MOBILE VERSION
-      /* reappearence of submenu on click or touch of arrow-icon */
-      input#open-features:checked ~ li > ul.submenu1,
-      input#open-company:checked ~ li > ul.submenu2{
-        display: block;  
-      }
-      /* turn-around of arrows after opening submenu */
-      input#open-features:checked + li > label > img,
-      input#open-company:checked + li > label > img {
-        transform: rotate(540deg);
-        transition:transform 0.2s;
-      }
-    }
 
     .nav-menu {
       visibility: visible;
@@ -143,7 +129,6 @@
       text-align: center;
       font-size: 0.875rem;
       line-height: 2rem;
-      box-sizing: border-box;
       width: 52%;  /* 195px/375Px */
       height: 42px;
       background:white;
@@ -253,8 +238,7 @@
       ul.mainmenu > li{
         display:inline;
         margin:auto 16px;
-        font-size:14px;
-        border-bottom:25px solid white /* enxtending the hover-area */
+        font-size: 0.875rem;
       }
       
       ul.submenu1, ul.submenu2 {
@@ -283,16 +267,7 @@
         transition:transform 0.2s;  
       }
 
-      /* ul.mainmenu li:hover img.arrow{
-        transform: rotate(540deg);
-        transition:transform 0.2s;
-      } */
       
-      
-
-      /* ul.mainmenu li:hover > ul{
-        display: block;
-      } */
       button.register {
         width:104px;
       }
@@ -317,8 +292,8 @@
       }
 
       div.Make-remote  h1 {
-        font-size: 80px;
-        line-height: 80px;
+        font-size: 5rem;
+        line-height: 5rem;
         font-style: normal;
         font-weight: 700;
         text-align:start;
