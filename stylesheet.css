@@ -10,23 +10,10 @@
     max-width: 675px;
     min-height: 200vh;
     margin: auto;
-    
    }
-   input { display: none;}
-    /* hidding the input checkbox, instead there is the label */
-    #hamburger-check{ 
-      display:block;
-      opacity: 0;
-      /* margin-left:auto;
-      position: relative;
-      left:22px;
-      top:3px; */
-    }
 
-    /* highlighting the label when the corresponding input checkbox is focused */
-    /* #hamburger-check:focus ~ label {
-      border: 2px solid black;
-    } */
+   input { display: none;}
+ 
     
     *{font:normal 16px/26px 'Epilogue'; color: #686868;}
     
@@ -35,17 +22,21 @@
       justify-content: space-between;
       margin:22px 4.222267%; /* 16px/375px */
     }
-    #hamburger-icon {
+
+    .hamburger-icon {
       display:block;
       width:30px;
+      background-color:transparent;
+      border:none;
       background-image: url(images/icon-menu.svg);
       background-repeat: no-repeat;
       background-size: cover;
       z-index: 10;  
       transition: background-image 0.3s;
     }
+
     /* hidding and defining menu */
-    nav#menu {
+    .nav-menu {
       position:absolute;
       width:64%; /* 240px/375px */
       height: 100vh;
@@ -57,7 +48,7 @@
       z-index: 0;
       transition:left 0.3s, opacity 0.3s;
     }
-    #overlay{
+    .overlay{
       position:absolute;
       width:36%; /* 135px/375px */ 
       height:100vh;
@@ -69,19 +60,22 @@
       opacity: 0; 
       transition:left 0.3s, opacity 0.3s;
     }
+
     /* reappearance of menu on icon-click */
-    input#hamburger-check:checked ~ nav#menu{
-      opacity: 1;
-      left:36%; /* 135px/375px */  
-      visibility: visible;
+    .showNav{
+      opacity: 1 ;
+      left:36% ; /* 135px/375px */  
+      visibility: visible ;
     }
-    input#hamburger-check:checked ~ #overlay{
-      opacity: 0.75;
-      left:0px;  
-      visibility: visible;
+
+    .showOverlay{
+      opacity: 0.75 ;
+      left:0px ;  
+      visibility: visible ;
     }
+
     /* exchanging burger-icon for a cross-icon */
-    input#hamburger-check:checked ~ #hamburger-icon {
+    .crossIcon {
       background-image: url(images/icon-close-menu.svg);
       transition: background-image 0.3s;
     }
@@ -92,13 +86,22 @@
     
     img.submenuicon{margin-right:15px;}
 
-    ul.mainmenu, ul.submenu1, ul.submenu2  {
+    ul.mainmenu, ul.submenu-features, ul.submenu2  {
       list-style-type:none;
       padding:15px 6.666667%;   /* 25px/375px */
     }
 
-    ul.submenu1, ul.submenu2 { display:none; }
+    .submenu1, .submenu2 { display:none; }
     
+    .showSubmenu {
+      display: block !important;
+    }
+
+    .button-open-submenu {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+    }
 
     @media (max-width:1440px){ /* ONLY FOR MOBILE VERSION
       /* reappearence of submenu on click or touch of arrow-icon */
@@ -114,21 +117,21 @@
       }
     }
 
-    nav#menu {
+    .nav-menu {
       visibility: visible;
     }
 
-    nav#menu img.arrow {
+    .nav-menu img.arrow {
       margin-left:10px; /* 10px/375px */
       width:15px;
     }
-    nav#menu > div.logreg {
+    .nav-menu > div.logreg {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
     }
     
-    nav#menu > div.logreg > a{
+    .nav-menu > div.logreg > a{
       font-size: 0.875rem;  /* 14/16 */
       line-height: 1rem;
       text-decoration: none;
@@ -226,7 +229,7 @@
       line-height: 2rem;
       text-decoration: none;
       }
-      nav#menu{
+      .nav-menu{
         position: unset;
         display:flex;
         justify-content: space-between;
@@ -237,7 +240,7 @@
       div.logreg{
         flex-wrap:nowrap;
       }
-      nav#menu > div.logreg a {
+      .nav-menu > div.logreg a {
         width: auto;
         margin:auto 42px; 
       }
@@ -275,13 +278,21 @@
         color:black;
       }
 
-      ul.mainmenu li:hover img.arrow{
-      transform: rotate(540deg);
-      transition:transform 0.2s;
+      .turnIcon {
+        transform: rotate(540deg);
+        transition:transform 0.2s;  
       }
-      ul.mainmenu li:hover > ul{
+
+      /* ul.mainmenu li:hover img.arrow{
+        transform: rotate(540deg);
+        transition:transform 0.2s;
+      } */
+      
+      
+
+      /* ul.mainmenu li:hover > ul{
         display: block;
-      }
+      } */
       button.register {
         width:104px;
       }
