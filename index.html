@@ -15,22 +15,25 @@
 <body> 
   <header>
     <img class="logo" src="images/logo.svg" alt="Logo">
+<<<<<<< HEAD
     <input type="checkbox" id="hamburger-check">
     <label id="hamburger-icon" for="hamburger-check" aria-label="open menu" ></label>
     <nav id="menu" aria-hidden="true">
+=======
+    <button id="hamburger-icon" class="hamburger-icon" aria-expanded="false" aria-label="open menu" ></button>
+    <nav id="menu" class="nav-menu" aria-hidden="true">
+>>>>>>> button-for-input
       <ul class="mainmenu">
-        <input type="checkbox" id="open-features">
-        <li>Features <label for="open-features"><img class="arrow" src="images/icon-arrow-down.svg" > </label>
-          <ul class="submenu1">
+        <li><button id="open-features" class="button-open-submenu" aria-label="open sub menu" aria-expanded="false">Features <img class="arrow" src="images/icon-arrow-down.svg" alt="" role="none"></button>
+          <ul id="submenu-features" class="submenu1" aria-hidden="true">
             <li> <a href="#"><img class="submenuicon" src="images/icon-todo.svg" alt="Icon Calender"> Todo List</a></li>
             <li> <a href="#"><img class="submenuicon" src="images/icon-calendar.svg" alt="Icon Calender"> Calender</a></li>
             <li> <a href="#"><img class="submenuicon" src="images/icon-reminders.svg" alt="Icon Reminders"> Reminders</a></li>
             <li> <a href="#"><img class="submenuicon" src="images/icon-planning.svg" alt="Icon Planing"> Planing</a></li>
           </ul>
         </li>
-        <input type="checkbox" id="open-company">
-        <li>Company <label for="open-company"><img class="arrow" src="images/icon-arrow-down.svg" ></label>
-          <ul class="submenu2">
+        <li><button id="open-company" class="button-open-submenu" aria-label="open sub menu" aria-expanded="false">Company <img class="arrow" src="images/icon-arrow-down.svg" alt="" role="none"></button>
+          <ul id="submenu-company" class="submenu2" aria-hidden="true">
             <li> <a href="#"> History </a>  </li>
             <li> <a href="#"> Our Team </a>  </li>
             <li> <a href="#"> Blog </a>  </li> 
@@ -44,7 +47,7 @@
         <button class="register">Register</button>
       </div>
     </nav>
-    <div id="overlay"></div>
+    <div id="overlay" class="overlay"></div>
     
   </header>
   <main>
@@ -69,6 +72,7 @@
     Coded by <a href="#">Harm Intemann</a>.
   </div>
 
+<<<<<<< HEAD
   <script>
     const nav = document.getElementById('menu');
     const checkbox = document.getElementById('hamburger-check');
@@ -92,5 +96,33 @@
     x.addListener(myFunction) // Attach listener function on state changes
 
   </script>
+=======
+  <!-- <script href="./main.js">
+    // const nav = document.getElementById('menu');
+    // const checkbox = document.getElementById('hamburger-check');
+    // checkbox.addEventListener('click', (e) => {
+    //   if (e.target.checked) {
+    //     nav.setAttribute('aria-hidden', 'false');
+    //   }
+    //   if (!e.target.checked) {
+    //     nav.setAttribute('aria-hidden', 'true');
+    //   }
+    // } )
+
+    // function myFunction(x) {
+    //   if (x.matches) { // If media query matches
+    //     nav.setAttribute('aria-hidden', 'false');
+    //   } 
+    // }
+
+    // var x = window.matchMedia("(min-width: 1440px)")
+    // myFunction(x) // Call listener function at run time
+    // x.addListener(myFunction) // Attach listener function on state changes
+
+    
+  </script> -->
+
+  <script src="./main.js"></script>
+>>>>>>> button-for-input
 </body>
 </html>
